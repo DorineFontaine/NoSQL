@@ -70,7 +70,9 @@ public class WriteCSV<U > {
 			  for (int i = 0; i< tableauNom.size(); i++) {
 				  sb.append(tableauNom.get(i));
 			      sb.append(',');
-			      sb.append("\" "+ resultsList.get(i) + "\" ");
+			      sb.append("\" "+ resultsList.get(i+1) + "\" ");
+			      sb.append(',');
+			      sb.append("\" "+ resultsList.get(i+1).size() + "\" ");
 			      sb.append('\n');
 				 }
 			  

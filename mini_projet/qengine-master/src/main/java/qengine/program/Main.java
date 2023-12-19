@@ -168,12 +168,12 @@ final class Main {
 	        		
 	        		
 	        		case "-data" : 
-	        			dataFile = args[i+1] + "sample_data.nt";
+	        			dataFile = args[i+1] + "100K.nt";
 	        			System.out.println("[AFFICHAGE CHEMIN DATA] : " + dataFile  );
 	        			
 	        			break;
 	        		case "-query" : 
-	        			queryFile = args[i+1] + "sample_query.queryset"; 
+	        			queryFile = args[i+1] + "STAR_ALL_workload.queryset"; 
 	        			System.out.println("[AFFICHAGE CHEMIN REQUETES] : " + queryFile );
 	        			
 	        			break;
@@ -304,7 +304,7 @@ final class Main {
 		
 		List<Object> tab = Arrays.asList(dataFile, queryFile, nbTriplet,nbRequetes,tempslectureDonnee - tempsdico,tempslectureRequete,tempsdico,index_ops.size(),tempsIndex,timeElapsedWorkload,timeElapsedProgramme);
 		WriteCSV<Object> executionTimeCSV = new WriteCSV<Object>();
-		executionTimeCSV.writeCSVinfo(pathCSV,listenomFichier,tab,"Info Execution" );
+		executionTimeCSV.writeCSVinfo(pathCSV,listenomFichier,tab,"Info Execution_100K" );
 		
 		//ecriture des reponses des requetes sur un fichier csv
 		List<String> listenomRequete = new ArrayList<String>(); 
@@ -313,7 +313,7 @@ final class Main {
 		}
 		
 		WriteCSV<Set<String>> requeteCSV = new WriteCSV<Set<String>>();
-		requeteCSV.writeCSV(pathCSV,listenomRequete,resultsList,"Réponse requêtes" );
+		requeteCSV.writeCSV(pathCSV,listenomRequete,resultsList, "Réponse requêtes_100K" );
 	        }
 		 System.out.println("\nProgramme terminé "  );
 	}
